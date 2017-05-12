@@ -2,7 +2,7 @@ class Furniture(object):
     pass
 
 class Table(Furniture):
-    def __init__(self, length, color):
+    def __init__(self, length, color="white"):
         self.legs = "4"
         self.color = color
         self.material = length
@@ -15,7 +15,6 @@ print table1.material
 print table1.length
 print table2.color
 print table2.length
-
 
 
 def addition():
