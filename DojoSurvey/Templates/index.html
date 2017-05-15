@@ -1,0 +1,33 @@
+<html>
+  <title>Dojo Survey Index</title>
+  <body>
+    <fieldset style = "width: 500px; margin: 50px;" >
+      <form action='/results' method="post">
+        Your Name:<input type = "text" name="name" placeholder = "input">
+        <br>
+        <br>
+        Location:
+        <select name="location">
+          <option value="San Jose">San Jose</option>
+          <option value="L.A">L.A</option>
+          <option value="D.C">D.C</option>
+          <option value="Canada">Canada</option>
+        </select>
+        <br>
+        <br>
+        Favorite Language:
+        <select name="language">
+          <option value="Python">Python</option>
+          <option value="Ruby">Ruby</option>
+          <option value="Mean">Mean</option>
+          <option value="JavaScript">JavaScript</option>
+        </select>
+        <p>Comment(optional):</p>
+        <textarea name = "description" rows="8" cols = "80">
+        </textarea>
+        <br>
+        <button style="color: white; background-color:rgb(119,165,175);">Button</buton>
+      </form>
+    </fieldset>
+  </body>
+</html>

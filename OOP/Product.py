@@ -33,8 +33,8 @@ class Product(object):
         print "Status:", self.status
         print ""
         return self
-product1 = Product(120, "Blu-Ray Player", 7, "Sony", 40)
-product2 = Product(1200, "Television", 95, "Sony", 400)
+product1 = Product(120, "StarBurs", 7, "Wrigley", 40)
+product2 = Product(1200, "Lotion", 95, "Cetaphil", 400)
 product3 = Product(25, "Book", 12, "Random House", 7)
 product4 = Product(1500, "Mattress", 100, "Sealy", 300)
 product1.add_tax(.07).display_info()
