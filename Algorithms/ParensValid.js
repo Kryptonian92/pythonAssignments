@@ -32,3 +32,5 @@ function findChar(string){
     }
     console.log(findChar("]"))
 }
+
+if str[x] == int symbol

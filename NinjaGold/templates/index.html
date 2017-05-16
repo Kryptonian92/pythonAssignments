@@ -7,6 +7,7 @@
   <body>
     <p style="display: inline-block;">Your Gold:</p>
     <fieldset style="width: 100px; display: inline-block;">
+      <p>{{session['current_gold']}}</p>
     </fieldset>
     <br>
     <br>
@@ -45,8 +46,13 @@
     <br>
     <br>
     <p>Activities:</p>
-    <fieldset style="width: 700px; height: 100px; text-align: left; overflow:scroll;">
+    <fieldset style="width: 708px; height: 100px; text-align: left; overflow:scroll;">
+      <p> {{test}} {{golds}} {{earned}} {{timestamp}} </p>
+      <!-- <p>{{session['whatHappened']}}</p> -->
     </fieldset>
-
+    <br>
+    <form class="" action="/reset" method="post">
+      <button type="submit" name="button" style="background-color:lightblue; border-radius: 5px;">Play Again!</button>
+    </form>
   </body>
 </html>
