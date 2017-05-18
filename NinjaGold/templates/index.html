@@ -37,7 +37,7 @@
     </fieldset>
     <fieldset style="width: 150px; text-align: center; display: inline-block;">
       <h3>Casino</h3>
-      <p>(earns 0-50 golds)</p>
+      <p>(earns 50 or looses 50)</p>
       <form class="" action="/process_money" method="post">
         <input type="hidden" name="building" value="casino">
         <input type="submit" name="" value="Find Gold!">
@@ -46,13 +46,13 @@
     <br>
     <br>
     <p>Activities:</p>
+
     <fieldset style="width: 708px; height: 100px; text-align: left; overflow:scroll;">
-      <p> {{test}} {{golds}} {{earned}} {{timestamp}} </p>
-      <!-- <p>{{session['whatHappened']}}</p> -->
+      {%for activity in session['log']%}
+        <p>{{activity[1]}}</p>
+      {%endfor%}
     </fieldset>
     <br>
-    <form class="" action="/reset" method="post">
-      <button type="submit" name="button" style="background-color:lightblue; border-radius: 5px;">Play Again!</button>
-    </form>
+    <a href="/reset">Play Again!</a>
   </body>
 </html>
