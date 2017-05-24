@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+  </head>
+  <style media="screen">
+  input{
+    width: 100%;
+    /*background-color: lightgrey;*/
+  }
+  fieldset{
+    /*background-color: lightgrey;*/
+  }
+
+  </style>
+  <body>
+    <fieldset style="width: 300px;">
+      <h3>Login</h3>
+      <form class="" action="/login" method="post">
+        <input type = "text" name="first_name" placeholder = "input" >
+        <br>
+        <br>
+        <input type = "text" name="first_name" placeholder = "input">
+        <br>
+        <br>
+        <button type="submit" name="button" style="color: white; background-color:rgb(119,165,175);">Submit</button>
+      </form>
+    </fieldset>
+    <br>
+    <fieldset style="width: 300px;">
+      <h3>Register</h3>
+      <form class="" action="/register" method="post">
+        <input type = "text" name="first_name" value = "" placeholder = "First Name">
+        <br>
+        <br>
+        <input type = "text" name="last_name" value = "" placeholder = "Last Name">
+        <br>
+        <br>
+        <input type = "email" name="email" value = "" placeholder = "Email">
+        <br>
+        <br>
+        <input type = "password" name="password" value = "" placeholder = "Password">
+        <br>
+        <br>
+        <input type = "password" name="confirmation" value = "" placeholder = "Confirm Password">
+        <br>
+        <br>
+        <button type="submit" name="button" style="color: white; background-color:rgb(119,165,175);">Submit</button>
+        </form>
+        <br>
+        <div>
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}
+              <fieldset style="width: 300px; height: 25px; background-color: #cf2a27; text-align: center;">
+                <p style="color: white;">{{ message }}</p>
+              </fieldset>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+        </div>
+  </body>
+</html>

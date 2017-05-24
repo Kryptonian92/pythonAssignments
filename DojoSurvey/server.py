@@ -9,5 +9,5 @@ def Name():
 @app.route("/results", methods=['GET', 'POST'])
 def results():
     return render_template('results.html', name = request.form["name"], location = request.form["location"], language = request.form["language"], comments = request.form["description"])
-    
+
 app.run(debug=True)
