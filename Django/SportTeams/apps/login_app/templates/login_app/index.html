@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <fieldset style="width: 300px;">
+      <h3>Login</h3>
+      <form class="" action="/login" method="post">
+        {% csrf_token %}
+        User Name:<input type = "text" name="email" placeholder = "input">
+        <br>
+        <br>
+        Password:<input type = "text" name="password" placeholder = "input">
+        <br>
+        <br>
+        <button type="submit" name="button" style="color: white; background-color:rgb(119,165,175);">Submit</button>
+      </form>
+    </fieldset>
+    <br>
+
+    <fieldset style="width: 300px;">
+      <h3>Register</h3>
+      <form class="" action="/register" method="post">
+        {% csrf_token %}
+        First Name:<input type = "text" name="first_name" placeholder = "input">
+        <br>
+        <br>
+        Last Name:<input type = "text" name="last_name" placeholder = "input">
+        <br>
+        <br>
+        Email:<input type = "email" name="email" placeholder = "input">
+        <br>
+        <br>
+        Password:<input type = "password" name="password" placeholder = "input">
+        <br>
+        <br>
+        Password Confirmation:<input type = "password" name="pwconfirm" placeholder = "input">
+        <br>
+        <br>
+        <button type="submit" name="button" style="color: white; background-color:rgb(119,165,175);">Submit</button>
+        </form>
+      </fieldset>
+        <br>
+        {% if messages %}
+          {%for i in messages%}
+          <p>{{i}}</p>
+          {% endfor %}
+        {% endif %}
+  </body>
+</html>

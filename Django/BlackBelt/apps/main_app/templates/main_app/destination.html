@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <style media="screen">
+  table, th, td {
+      border: 2px solid black;
+      border-collapse: collapse;
+  }
+  </style>
+  <h1>Hello {{request.session.current_user}}</h1>
+  <!-- <h1>Trip, {{current_trip.destination}}</h1> -->
+  <br>
+    {% for i in trips %}
+    <h1>{{i.destination}}</h1>
+    <p>Planned By: {{i.created_by}}</p>
+    <p>Description: {{i.description}}</p>
+    <p>Travel Date From: {{i.travel_start}}</p>
+    <p>Travel Date To: {{i.travel_end}}</p>
+    {% endfor %}
+  </body>
+</html>

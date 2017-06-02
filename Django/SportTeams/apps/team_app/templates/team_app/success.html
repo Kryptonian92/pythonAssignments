@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Success Page</title>
+  </head>
+  <body>
+    <h1>Teams You've Joined</h1>
+
+    <h3>Team {{request.session.current_user}}</h3>
+    <p>Your name:</p>
+    <p>User</p>
+    <p>User</p>
+    <br>
+    <h1>Join Another Team!</h1>
+    <p>All Teams in "Team" Class:</p>
+    <ol>
+      {% for team in teams %}
+        <li>
+          {{team.name}}
+          <td><a href="/teams/remove/{{team.id}}">Remove</a></td>
+        </li>
+      {% endfor %}
+    </ol>
+    <h1>Create A Team! </h1>
+    <form class="" action="/teams/create_team" method="post">
+      {% csrf_token %}
+      <input type = "text" name="team_name" placeholder = "Create">
+      <button type="submit" name="create_button" style="color: white; background-color:rgb(119,165,175);">Create!</button>
+      </form>
+    </body>
+</html>

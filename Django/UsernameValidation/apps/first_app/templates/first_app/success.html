@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Success!</title>
+</head>
+<body>
+    <fieldset>Success! The email: {{current.email}} is valid</fieldset>
+    <fieldset>
+        <legend>Usernames Entered:</legend>
+        <table>
+            <tbody>
+                {% for i in result %}
+                <tr>
+                    <td>{{i.email}}</td>
+                    <td>{{i.created_at}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        <table>
+    </fieldset>
+    <hr>
+    <a href='/'>Home</a>
+</body>
+</html>

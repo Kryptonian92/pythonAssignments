@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <style media="screen">
+    table, th, td {
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
+    </style>
+    <h1>Hello {{request.session.current_user}}</h1>
+    <br>
+    <h3>Your Trip Schedules</h3>
+    <table style="width:800px;">
+      <tr>
+        <th>Destination</th>
+        <th>Travel Start Date</th>
+        <th>Travel End Date</th>
+        <th>Plan</th>
+      </tr>
+      {% for i in user_plans %}
+      <tr>
+        <td><a href="/main/trip_info/{{i.id}}">{{i.destination}}</a></td>
+        <td>{{i.travel_start}}</td>
+        <td>{{i.travel_end}}</td>
+        <td>{{i.description}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <br>
+    <h3>Other User's Travel Plans</h3>
+    <table style="width:800px;">
+      <tr>
+        <th>Name</th>
+        <th>Destination</th>
+        <th>Travel Start Date</th>
+        <th>Travel End Date</th>
+        <th>Plan</th>
+        <th>Do You Want to Join?</th>
+      </tr>
+      {% for i in all_other_user_plans%}
+      <tr>
+        <td>{{i.created_by}}</td>
+        <td><a href="/main/trip_info/{{i.id}}">{{i.destination}}</a></td>
+        <td>{{i.travel_start}}</td>
+        <td>{{i.travel_end}}</td>
+        <td>{{i.description}}</td>
+        <td><a href="/main/join/{{i.id}}">Join</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+    <br>
+    <h3>All Trips</h3>
+    <table style="width:800px;">
+      <tr>
+        <th>Created by</th>
+        <th>Destination</th>
+        <th>Travel Start Date</th>
+        <th>Travel End Date</th>
+        <th>Description</th>
+        <th>Id</th>
+      </tr>
+      {% for i in all_users %}
+      <tr>
+        <td>{{i.created_by}}</td>
+        <td>{{i.destination}}</a></td>
+        <td>{{i.travel_start}}</td>
+        <td>{{i.travel_end}}</td>
+        <td>{{i.description}}</td>
+        <td>{{i.id}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <h3>User Trip Tabe</h3>
+    <table style="width:800px;">
+      <tr>
+        <th>Trips</th>
+        <th>users</th>
+        <th>id</th>
+         </tr>
+      {% for i in userTrips %}
+      <tr>
+        <td>{{i.trips}}</td>
+        <td>{{i.users}}</a></td>
+         <td>{{i.id}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <br>
+    <a href="/main/add">Add Travel Plan</a>
+  </body>
+</html>

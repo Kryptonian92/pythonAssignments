@@ -1,0 +1,51 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Full Stack Books</title>
+</head>
+  <title>Dojo Survey Index</title>
+  <body>
+    <style media="screen">
+    table {
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 2px solid black;
+    }
+    </style>
+    <fieldset style = "width: 500px; margin: 50px;" >
+      <h1>Add A New Course</h1>
+      <form action='/add_course' method="post">
+        {% csrf_token %}
+        Name:
+        <br>
+        <input type = "text" name="name" placeholder = "input">
+        <br>
+        <br>
+        Description:
+        <br>
+        <input type = "text" name="description" placeholder = "input">
+        <br>
+        <br>
+        <button type = "submit" style="color: white; background-color:green;">Add</buton>
+      </form>
+    </fieldset>
+    <table style="overflow-x:auto;">
+    <tr>
+      <th>Course Name</th>
+      <th>Description</th>
+      <th>Date Added</th>
+      <th>Actions</th>
+    </tr>
+    {% for i in courses %}
+      <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.description}}</td>
+        <td>{{i.created_at}}</td>
+        <td><a href="/remove/{{i.id}}">Remove</a></td>
+      </tr>
+    {% endfor %}
+  </table>
+  </body>
+</html>

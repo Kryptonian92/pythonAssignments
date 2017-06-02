@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+        <fieldset style="width: 300px;">
+          <h3>Add a Trip</h3>
+          <form class="" action="/main/new_trip" method="post">
+            {% csrf_token %}
+            Destination:<input type = "text" name="destination" placeholder = "input">
+            <br>
+            <br>
+            Description:<input type = "text" name="description" placeholder = "input">
+            <br>
+            <br>
+            Travel Date From:<input type = "date" name="travel_from" placeholder = "input">
+            <br>
+            <br>
+            Travel Date To:<input type = "date" name="travel_to" placeholder = "input">
+            <br>
+            <br>
+            <button type="submit" name="button" style="color: white; background-color:rgb(119,165,175);">Add</button>
+            </form>
+          </fieldset>
+          {% if messages %}
+            {%for i in messages%}
+            <p>{{i}}</p>
+            {% endfor %}
+          {% endif %}
+  </body>
+</html>
