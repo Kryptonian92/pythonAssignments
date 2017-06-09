@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <fieldset style='width:300px;'>
+        <form action='/process' method='post'>
+            <label for='full_name'>Your Name:</label>
+            <input type='text' name='full_name'>
+            <hr>
+            <label for='location'>Location</label>
+            <select name='location'>
+                <option value='DC'>DC</option>
+                <option value='Seattle'>Seattle</option>
+                <option value='SF'>San Fransisco</option>
+            </select>
+            <hr>
+            <label for='language'>Favorite Langugage</label>
+            <select name='language'>
+                <option value='Javascript'>Javascript</option>
+                <option value='Python'>Python</option>
+                <option value='Java'>Java</option>
+            </select>
+            <hr>
+            <label for='comments'>Comments</label>
+            <textarea cols='50' rows='5' name='comments'></textarea>
+            <input type='submit' name='submit'>
+        </form>
+    </fieldset>
+
+  </body>
+</html>

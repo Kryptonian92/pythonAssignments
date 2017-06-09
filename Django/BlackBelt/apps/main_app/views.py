@@ -12,14 +12,18 @@ def success(request):
     # }
 
     a = set(Trip.objects.all())
-    b= set(Trip.objects.filter(new_trips__users__username = request.session['current_user']))
+    b= set(Trip.objects.exclude(new_trips__users_id__username = request.session['current_user']))
+    c = set(Trip.objects.filter(created_by = request.session['current_user']))
     excluded_travels = (a.difference(b))
     context = {
     # 'user_plans' : Trip.objects.filter(new_trips__users__username = request.session['current_user']),
+    # 'user_plans' : Trip.objects.filter(created_by = request.session['current_user']),
     'user_plans' : Trip.objects.filter(created_by = request.session['current_user']),
-    'all_other_user_plans': excluded_travels,
+    # 'user_plans' : User_Trip.objects.filter(trips__users__created_by = request.session['current_user']),
+# user_plans' : User_Travel.objects.filter(user__email = request.session['user_name'])
     'all_users':Trip.objects.all(),
-    'userTrips': User_Trip.objects.all()
+    'other_users': Trip.objects.exclude(created_by = request.session['current_user'])
+    # 'new_plans': userNow
     }
     print b, "this is b"
     print a, "this is a"

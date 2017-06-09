@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <fieldset style='background-color: lightseagreen;width:550px;'>
+        <p>Thanks for submitting! You have submitted this form {{request.session.count}} times!</p>
+    </fieldset>
+    <fieldset style='width:550px;'>
+        <legend>Submitted Info</legend>
+        <p>First Name: <%= survey.name%></p>
+        <hr>
+        <p>Location: <%= survey.location%></p>
+        <hr>
+        <p>Favorite Language: <%= survey.favorite %></p>
+        <hr>
+        <p>Comments: <%=survey.comment %></p>
+        <hr>
+        <a href='/'>Back</a>
+    </fieldset>
+
+  </body>
+</html>

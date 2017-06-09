@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+    // Go through each value in the array x, where x = [3,5,"Dojo", "rocks", "Michael", "Sensei"]. Log each value.
+    // Add a new value of 100 using the push method
+    // add a new array.
+    // create a simple loop that sums all the numbers between 1 to 500
+    var x = [3,5,"Dojo", "rocks", "Michael", "Sensei"]
+    x.push(100);
+    x.push(["hello", "world", "JavaScript is Fun"]);
+    console.log(x)
+
+    // Create a simple for loop that sums all the numbers between 1 to 500. Have console log the final sum.
+    var sum=0;
+    for (var i=1; i<501; i++){
+      sum+=i
+      console.log(i);
+    }
+    console.log(sum);
+
+    // Write a loop that will go through the array [1, 5, 90, 25, -3, 0], find the minimum value, and then print it
+    var arr = [1, 5, 90, 25, -3, 0];
+    var min = arr[0];
+    for (var i=0; i<arr.length; i++){
+      if (min>arr[i]){
+        min = arr[i]
+      }
+    }
+    console.log("min equals", min);
+
+    // Write a loop that will go through the array [1, 5, 90, 25, -3, 0], find the average of all of the values, and then print it
+    var arr = [1, 5, 90, 25, -3, 0];
+    var sum = 0;
+    for (var i=0; i<arr.length; i++){
+      sum+=arr[i]
+    }
+    console.log("average equals", sum/arr.length)
+    //write a for loop that will loop through each value in the object and console.log() each key value pair
+    var newNinja = {
+      name: 'Jessica',
+      profession: 'coder',
+      favorite_language: 'JavaScript', //like that's even a question!
+      dojo: 'Dallas'
+    }
+    for (var i=0; i<arr.length; i++){
+    }
+    console.log(newNinja)
+    </script>
+
+  </body>
+</html>

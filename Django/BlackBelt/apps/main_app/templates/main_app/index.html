@@ -21,6 +21,7 @@
         <th>Travel End Date</th>
         <th>Plan</th>
       </tr>
+      {{user_plans}}
       {% for i in user_plans %}
       <tr>
         <td><a href="/main/trip_info/{{i.id}}">{{i.destination}}</a></td>
@@ -41,7 +42,7 @@
         <th>Plan</th>
         <th>Do You Want to Join?</th>
       </tr>
-      {% for i in all_other_user_plans%}
+      {% for i in other_users%}
       <tr>
         <td>{{i.created_by}}</td>
         <td><a href="/main/trip_info/{{i.id}}">{{i.destination}}</a></td>

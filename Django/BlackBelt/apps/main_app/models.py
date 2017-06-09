@@ -36,9 +36,8 @@ class Trip(models.Model):
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
     objects = TripManager()
-
     # def __str__(self):
-    #     return self.destination
+    #     return self.name
 
 class User_Trip(models.Model):
     trips = models.ForeignKey(Trip, related_name="new_trips")
