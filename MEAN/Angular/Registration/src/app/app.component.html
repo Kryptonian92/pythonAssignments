@@ -1,0 +1,72 @@
+<div style="text-align:Left">
+  <h1>
+    {{title}}
+  </h1>
+</div>
+  <fieldset style="width: 300px;">
+    <!-- <div class="" style="width: 280px; height: 230px;"> -->
+      <fieldset class="registered"  *ngIf="success" style="width: 250px;">
+        <p>Thank you for registering with us, {{ user.firstName }} {{ user.lastName}}. We just sent you a confirmation email at {{ user.email }} and will send all mail to {{ user.address }} {{ user.apt }}, {{ user.city }},  {{ user.state }}.</p>
+        <br>
+        <p>Have a wonderful day!</p>
+      </fieldset>
+    <!-- </div> -->
+    <h2>Account Information</h2>
+    <form (submit)="onSubmit()" name="frm">
+      First Name:<input type = "text" name="firstName"
+      value="" placeholder = "First Name" required
+      [(ngModel)]="user.firstName" #firstName='ngModel' />
+      <div *ngIf="!firstName.valid" style="color:red;">First name is required</div>
+      <br>
+      <br>
+      Last Name:<input type = "text" name="lastName"
+      value="" placeholder = "Last Name" required
+      [(ngModel)]="user.lastName" #lastName='ngModel' />
+      <div *ngIf="!lastName.valid" style="color:red;">Last name is required</div>
+      <br>
+      <br>
+      Email:<input type = "email" name="email"
+      value="" placeholder = "Email" required [(ngModel)]="user.email" #email="ngModel" pattern="^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$"/>
+      <div *ngIf="!email.valid" style="color:red;">Email must be valid</div>
+      <br>
+      <br>
+      Password:<input type = "password" name="password" placeholder = "Password" minlength="2" [(ngModel)]="user.password" #password='ngModel'/>
+      <div *ngIf="!password.valid" style="color:red;">Password must be atleast 16 characters long</div>
+      <br>
+      <br>
+      Password Confirmation:<input type = "password" name="pwconfirm" placeholder = "Password Confirmation" [(ngModel)]="user.pwconfirm" #pwconfirm='ngModel' />
+      <div *ngIf="user.pwconfirm != user.password" style="color:red;">Password confirmation does not match</div>
+      <br>
+      <br>
+      Street Address<input type = "text" name="address" placeholder = "Address" required [(ngModel)]="user.address" #address='ngModel' />
+      <div *ngIf="!address.valid" style="color:red;">Address is required</div>
+      <br>
+      <br>
+      Unit/Apt # <input type = "text" name="apt" placeholder = "Aparment" required [(ngModel)]="user.apt" #apt='ngModel' />
+      <div *ngIf="!apt.valid" style="color: red;"> Apartment is required</div>
+      <br>
+      <br>
+      City<input type = "text" name="city" placeholder = "input" required [(ngModel)]="user.city" #city="ngModel">
+      <div *ngIf="!city.valid" style="color:red;">City is required</div>
+      <br>
+      <br>
+      State
+      <select name="state" required [(ngModel)]="user.state" #state="ngModel">
+        <option value="DC">D.C</option>
+        <option value="Maryland">Maryland</option>
+        <option value="Virginia">Virginia</option>
+        <option value="Deleware">Deleware</option>
+      </select>
+      <div *ngIf="!state.valid" style="color:red;">State is required</div>
+      <br>
+      <br>
+
+      I'm feeling lucky:
+      <input type = "radio" name="luck" value="Yes" required [(ngModel)]="user.luck" #luck="ngModel">Yes
+      <input type = "radio" name="luck" value="No" required [(ngModel)]="user.luck" #luck="ngModel">No
+      <div *ngIf="!luck.valid" style="color:red;">Choosing how you feel is required</div>
+      <br>
+      <br>
+      <button *ngIf="firstName.valid && lastName.valid && email.valid && password.valid && pwconfirm.valid && address.valid && apt.valid && city.valid &&state.valid&& luck.valid"type="submit" name="button" style="color: white; background-color:rgb(119,165,175);">Register</button>
+    </form>
+  </fieldset>

@@ -1,0 +1,12 @@
+fieldset{
+  color: black;
+  background-color: #a1c5f6;
+  width: 500px;
+  height: 500px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 30px;
+}
+.text{
+  margin-left: 10px;
+}

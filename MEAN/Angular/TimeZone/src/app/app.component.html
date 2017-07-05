@@ -1,0 +1,15 @@
+<!--The whole content below can be removed with the new code.-->
+<div style="text-align:center">
+  <h1>
+    {{title}}!!
+  </h1>
+  <button (click)="currentDate('PST')" [ngClass]="{selected: lastTimeZoneSelected === 'PST'}">PST</button>
+  <button (click)="currentDate('MST')" [ngClass]="{selected: lastTimeZoneSelected === 'MST'}">MST</button>
+  <button (click)="currentDate('CST')" [ngClass]="{selected: lastTimeZoneSelected === 'MST'}">CST</button>
+  <button (click)="currentDate('EST')" [ngClass]="{selected: lastTimeZoneSelected === 'MST'}">EST</button>
+
+  <button (click)="currentDate('EST')" style="width: 90px;">Clear</button>
+</div>
+<div>
+  <h1 style="text-align:center">{{date | date:'medium'}}</h1>
+</div>

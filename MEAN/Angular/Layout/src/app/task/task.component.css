@@ -1,0 +1,12 @@
+fieldset{
+  color: black;
+  background-color: #a1c5f6;
+  width: 700px;
+  height: 100px;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+h1{
+  position: relative;
+  left: 10px;
+}

@@ -1,0 +1,35 @@
+<!--The whole content below can be removed with the new code.-->
+<div style="text-align:center">
+  <h1>
+    {{title}}!!
+  </h1>
+</div>
+<div class="wrapper">
+  <div (click)='num = num +1' class="outer">
+    <div (click)='onClick()'class="inner">
+      <p>ON</p>
+    </div>
+  </div>
+  <div class="outer"
+  *ngFor="let color of imageArray"
+  [ngStyle]="{'background-color': color, 'display': 'inline-block' }">
+    <div class="inner">
+      <p>ON</p>
+    </div>
+  </div>
+  <div class="outer">
+    <div class="inner">
+      <p>ON</p>
+    </div>
+  </div>
+  <div class="outer">
+    <div class="inner">
+      <p>ON</p>
+    </div>
+  </div>
+  <div class="outer">
+    <div class="inner">
+      <p>ON</p>
+    </div>
+  </div>
+</div>
