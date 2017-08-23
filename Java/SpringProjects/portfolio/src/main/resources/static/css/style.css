@@ -1,0 +1,37 @@
+*{
+/* 	border: 1px dashed red;
+ */}
+h1 {
+        color: blue;
+}
+
+fieldset{
+	width: 200px;
+}
+.home{
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+}
+.hometext{
+	font-size: 20px;
+	display: inline-block;
+}
+.flex{
+	display:flex;
+	width: 50%;
+	margin: auto;
+}
+
+.box{
+	width:  200px;
+	height: 200px;
+	margin: 32px;
+	border: 2px solid black;
+}
+h2{
+	font-size: 30px;
+}
+p{
+	font-sixe: 20px;
+}
