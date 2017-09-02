@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.ausar</groupId>
-	<artifactId>displaydate</artifactId>
+	<artifactId>counter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>displaydate</name>
-	<description>Spring Intro Display day assignment </description>
+	<name>counter</name>
+	<description>Counter Assignment </description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -39,14 +39,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
 	</dependencies>
 
