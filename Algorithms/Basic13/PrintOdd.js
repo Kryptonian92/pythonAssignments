@@ -7,3 +7,4 @@ function printOdds1to255(){
     num = num + 2;
   }
 }
+return printOdds1to255();
