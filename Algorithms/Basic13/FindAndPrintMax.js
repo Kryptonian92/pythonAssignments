@@ -2,7 +2,7 @@
 //the largest element in a given array
 
 function printArrayMax(arr){
-  var newArray = [1,4,22343,7,334,7789,999999]
+  var newArray = [1,4,22343,7,334,7789]
   if(newArray.length == 0){
     console.log("Empty array, no max value");
     return;
